@@ -12,9 +12,9 @@ public class Sketch extends PApplet {
   int screenSize = 800;
 
     // snow variables
-    float[] snowX = new float[screenSize/10];
-    float[] snowY = new float[screenSize/10];
-    boolean[] snowVisible = new boolean[screenSize/10];
+    float[] snowX = new float[screenSize/5];
+    float[] snowY = new float[screenSize/5];
+    boolean[] snowVisible = new boolean[screenSize/5];
     boolean snowClick;
     float snowWidth = screenSize/40;
     float snowHeight = screenSize/40;
@@ -29,8 +29,8 @@ public class Sketch extends PApplet {
     boolean playerDown;
     boolean playerRight;
 
-    float playerX = 0;
-    float playerY = 0;
+    float playerX = screenSize/2;
+    float playerY = screenSize/2;
     int playerLives = 3;
     float playerWidth = snowWidth;
     float playerHeight = snowHeight;
