@@ -29,11 +29,11 @@ public class Sketch extends PApplet {
     boolean playerDown;
     boolean playerRight;
 
-    float playerX = screenSize/2;
-    float playerY = screenSize/2;
-    int playerLives = 3;
     float playerWidth = snowWidth;
     float playerHeight = snowHeight;
+    float playerX = screenSize/2 - playerWidth/2;
+    float playerY = screenSize/2 - playerHeight/2;
+    int playerLives = 3;
 
     // menu variables
     int menuScreen = 0;
@@ -47,7 +47,7 @@ public class Sketch extends PApplet {
     // loops through the arrays and assigns data to each square before the program is executed
     for (int i = 0; i < snowY.length; i++){
 
-      snowY[i] = random(screenSize);
+      snowY[i] = random(-screenSize, 0);
       snowX[i] = random(screenSize);
       snowVisible[i] = true;
     }
@@ -126,6 +126,7 @@ public class Sketch extends PApplet {
       if (mouseX >= snowX[i] && mouseX <= snowX[i] + snowWidth && mouseY >= snowY[i] && mouseY <= snowY[i] + snowWidth && snowClick){
 
         snowVisible[i] = false;
+        snowClick = false;
       }
 
       // player collision
